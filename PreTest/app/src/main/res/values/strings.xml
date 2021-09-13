@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Exam</string>
+    <string name="internet_not_connected">Internet not connected</string>
+</resources>

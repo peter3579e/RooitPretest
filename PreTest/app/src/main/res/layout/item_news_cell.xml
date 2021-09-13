@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="news"
+            type="com.peter.pretest.data.News" />
+        <variable
+            name="imageString"
+            type="String" />
+
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_chat_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="20dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    imageUrl="@{news.urlToImage}" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintTop_toTopOf="@id/image"
+                app:layout_constraintBottom_toBottomOf="@id/image"
+                android:text='@{news.title + " - " + news.source.name}'
+                android:maxLines="2"
+                tools:text="this is the news from bbc"/>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
